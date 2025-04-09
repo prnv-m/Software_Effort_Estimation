@@ -2,7 +2,6 @@
 Estimating effort using deep learning techniques on the COCOMO dataset
 This project demonstrates how to estimate software development effort using a deep learning model trained on a historical dataset (likely based on COCOMO81). The model uses various project features to predict the required effort and evaluates its performance using standard regression metrics.
 
-### 🔄 Feature Transformations
 
 ## Dependencies
 `pip install pandas numpy matplotlib seaborn scikit-learn tensorflow`
@@ -30,8 +29,27 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
 
+## Model Architecture
+Implemented a deep learning regression model using TensorFlow/Keras to estimate software development effort from COCOMO 81 attributes.
 
+The model was designed to capture non-linear relationships between project attributes and the actual effort required.
 
+```plaintext
+Input Layer (17 features)
+        ↓
+Dense Layer (64 units, ReLU activation)
+        ↓
+Dropout (rate=0.2)
+        ↓
+Dense Layer (32 units, ReLU activation)
+        ↓
+Dropout (rate=0.2)
+        ↓
+Dense Layer (16 units, ReLU activation)
+        ↓
+Output Layer (1 unit, Linear activation)
+
+```
 
 ## Notes
 
